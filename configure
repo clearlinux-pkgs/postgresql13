@@ -1,0 +1,13 @@
+--prefix=/usr/share/postgresql13
+--bindir=/usr/libexec/postgresql13
+--sysconfdir=/etc/postgresql13
+--datadir=/usr/share/postgresql13
+--includedir=/usr/include/postgresql13
+--libdir=/usr/lib64/postgresql13
+--with-includes=/usr/include/readline/
+--enable-tap-tests
+--with-systemd
+--with-openssl
+--with-python
+--with-pam
+--with-uuid=e2fs
