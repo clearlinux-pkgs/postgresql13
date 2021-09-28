@@ -4,7 +4,7 @@
 #
 Name     : postgresql13
 Version  : 13.4
-Release  : 2
+Release  : 4
 URL      : https://ftp.postgresql.org/pub/source/v13.4/postgresql-13.4.tar.gz
 Source0  : https://ftp.postgresql.org/pub/source/v13.4/postgresql-13.4.tar.gz
 Summary  : No detailed summary available
@@ -94,15 +94,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1629319575
+export SOURCE_DATE_EPOCH=1632841251
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto -march=x86-64-v3 "
 %configure --disable-static --prefix=/usr/share/postgresql13 \
 --bindir=/usr/libexec/postgresql13 \
 --sysconfdir=/etc/postgresql13 \
@@ -119,7 +119,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1629319575
+export SOURCE_DATE_EPOCH=1632841251
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/postgresql13
 cp %{_builddir}/postgresql-13.4/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql13/b65c2d5331bc4d97b4b88e5a0cbf98c0452ea8d7
