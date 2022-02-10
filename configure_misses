@@ -51,6 +51,7 @@ Configure miss: wcstombs_l declaration
 Configure miss: whether F_FULLFSYNC is declared
 Configure miss: whether NLS is wanted
 Configure miss: whether g++ supports -fexcess-precision=standard, for CXXFLAGS
+Configure miss: whether gcc supports -Wcompound-token-split-by-macro, for NOT_THE_CFLAGS
 Configure miss: whether gcc supports -Wunused-command-line-argument, for NOT_THE_CFLAGS
 Configure miss: whether gettimeofday takes only one argument
 Configure miss: whether strerror_r returns int
