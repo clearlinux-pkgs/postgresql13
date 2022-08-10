@@ -5,8 +5,6 @@
 --includedir=/usr/include/postgresql13
 --libdir=/usr/lib64/postgresql13
 --with-includes=/usr/include/readline/
---enable-tap-tests
---with-systemd
 --with-openssl
 --with-python
 --with-pam

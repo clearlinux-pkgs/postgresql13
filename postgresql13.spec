@@ -4,7 +4,7 @@
 #
 Name     : postgresql13
 Version  : 13.7
-Release  : 9
+Release  : 10
 URL      : https://ftp.postgresql.org/pub/source/v13.7/postgresql-13.7.tar.gz
 Source0  : https://ftp.postgresql.org/pub/source/v13.7/postgresql-13.7.tar.gz
 Summary  : No detailed summary available
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652376374
+export SOURCE_DATE_EPOCH=1660154061
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -110,8 +110,6 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 --includedir=/usr/include/postgresql13 \
 --libdir=/usr/lib64/postgresql13 \
 --with-includes=/usr/include/readline/ \
---enable-tap-tests \
---with-systemd \
 --with-openssl \
 --with-python \
 --with-pam \
@@ -119,11 +117,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1652376374
+export SOURCE_DATE_EPOCH=1660154061
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/postgresql13
-cp %{_builddir}/postgresql-13.7/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql13/db5a4f50b09e55794c5812fec9718988aa4486e8
-cp %{_builddir}/postgresql-13.7/src/backend/regex/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql13/9ca05e9c70d9823e191d9b3876ecdeb57c53c725
+cp %{_builddir}/postgresql-%{version}/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql13/db5a4f50b09e55794c5812fec9718988aa4486e8
+cp %{_builddir}/postgresql-%{version}/src/backend/regex/COPYRIGHT %{buildroot}/usr/share/package-licenses/postgresql13/9ca05e9c70d9823e191d9b3876ecdeb57c53c725
 %make_install
 
 %files
@@ -136,10 +134,6 @@ cp %{_builddir}/postgresql-13.7/src/backend/regex/COPYRIGHT %{buildroot}/usr/sha
 /usr/lib64/postgresql13/pgxs/src/makefiles/pgxs.mk
 /usr/lib64/postgresql13/pgxs/src/nls-global.mk
 /usr/lib64/postgresql13/pgxs/src/pl/plpython/regress-python3-mangle.mk
-/usr/lib64/postgresql13/pgxs/src/test/perl/PostgresNode.pm
-/usr/lib64/postgresql13/pgxs/src/test/perl/RecursiveCopy.pm
-/usr/lib64/postgresql13/pgxs/src/test/perl/SimpleTee.pm
-/usr/lib64/postgresql13/pgxs/src/test/perl/TestLib.pm
 /usr/lib64/postgresql13/pgxs/src/test/regress/pg_regress
 /usr/lib64/postgresql13/pkgconfig/libecpg.pc
 /usr/lib64/postgresql13/pkgconfig/libecpg_compat.pc
