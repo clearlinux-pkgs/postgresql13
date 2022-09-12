@@ -4,7 +4,7 @@
 #
 Name     : postgresql13
 Version  : 13.8
-Release  : 11
+Release  : 12
 URL      : https://ftp.postgresql.org/pub/source/v13.8/postgresql-13.8.tar.gz
 Source0  : https://ftp.postgresql.org/pub/source/v13.8/postgresql-13.8.tar.gz
 Summary  : No detailed summary available
